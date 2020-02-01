@@ -3,6 +3,9 @@ import House from "../Components/House";
 
 export default class HouseContainer extends React.Component {
   render() {
-    return <ul className="houseContainer">{houses}</ul>;
+    let hogwartsObj = this.props.hogwarts.map(hogwart => <House key={hogwart.id} hogwart={hogwart} updateCharacterHouse={this.props.updateCharacterHouse} />)
+    return <ul className="houseContainer">
+      {hogwartsObj}
+    </ul>;
   }
 }
